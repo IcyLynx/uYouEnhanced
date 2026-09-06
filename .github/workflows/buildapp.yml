@@ -3,9 +3,6 @@
 
 name: Build and Release uYouEnhanced
 
-env:
-  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true:
-
 on:
   workflow_dispatch:
     inputs:
@@ -85,7 +82,7 @@ jobs:
       
       - name: SDK Caching
         id: SDK
-        uses: actions/cache@v4.3.0
+        uses: actions/cache@v5
         env:
           cache-name: iOS-${{ inputs.sdk_version }}-SDK
         with:
